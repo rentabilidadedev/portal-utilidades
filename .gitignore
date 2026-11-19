@@ -1,0 +1,29 @@
+# Dependências
+node_modules/
+
+# Arquivos de ambiente e credenciais
+.env
+.env.*
+!.env.example
+
+# Builds e arquivos gerados
+dist/
+build/
+.next/
+.astro/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Arquivos temporários
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Configurações locais
+.vscode/
+.idea/
