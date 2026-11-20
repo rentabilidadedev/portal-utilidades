@@ -27,3 +27,6 @@ Thumbs.db
 # Configurações locais
 .vscode/
 .idea/
+
+# Cloudflare Wrangler
+.wrangler/

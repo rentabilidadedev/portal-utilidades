@@ -1,0 +1,24 @@
+{
+  "name": "portal-utilidades",
+  "version": "1.0.0",
+  "description": "Portal de ferramentas gratuitas, calculadoras e simuladores para Dourados e região.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rentabilidadedev/portal-utilidades.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rentabilidadedev/portal-utilidades/issues"
+  },
+  "homepage": "https://github.com/rentabilidadedev/portal-utilidades#readme",
+  "devDependencies": {
+    "wrangler": "^4.165.0"
+  }
+}
