@@ -337,3 +337,116 @@ input:focus-visible {
         scroll-behavior: auto;
     }
 }
+
+
+/* ========================================
+   PRIVACIDADE E CONSENTIMENTO
+   ======================================== */
+
+/* Mantém o aviso oculto quando necessário */
+.privacy-banner[hidden] {
+    display: none !important;
+}
+
+/* Aviso fixo na parte inferior da tela */
+.privacy-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: #ffffff;
+    color: #17324b;
+    border-top: 1px solid #dce3e9;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
+
+    padding: 20px 16px;
+}
+
+/* Limita a largura do conteúdo */
+.privacy-banner .container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.privacy-banner h2 {
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+}
+
+.privacy-banner p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 16px;
+}
+
+/* Botões de consentimento */
+.privacy-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.privacy-actions button {
+    padding: 11px 20px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#aceitar-analytics {
+    background: #17324b;
+    color: #ffffff;
+    border: 1px solid #17324b;
+}
+
+#recusar-analytics {
+    background: #ffffff;
+    color: #17324b;
+    border: 1px solid #17324b;
+}
+
+/* Botão de privacidade no rodapé */
+.privacy-settings-button {
+    background: transparent;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 4px 0;
+}
+
+/* Navegação por teclado */
+.privacy-actions button:focus-visible,
+.privacy-settings-button:focus-visible {
+    outline: 3px solid #397cba;
+    outline-offset: 3px;
+}
+
+/* Adaptação para celulares */
+@media (max-width: 600px) {
+    .privacy-banner {
+        padding: 16px;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+
+    .privacy-banner h2 {
+        font-size: 1.1rem;
+    }
+
+    .privacy-banner p {
+        font-size: 0.9rem;
+    }
+
+    .privacy-actions {
+        flex-direction: column;
+    }
+
+    .privacy-actions button {
+        width: 100%;
+    }
+}

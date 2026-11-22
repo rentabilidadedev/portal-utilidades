@@ -7,7 +7,7 @@
     <meta name="google-site-verification" content="3Gibc_RpT8RMuTijK7-HCrd3h3-XX2DtJVUc2CFhb_k" />
 
 
-    <title>Portal Utilidades | Ferramentas gratuitas para o dia a dia</title>
+    <title>Portal Utilidades | Ferramentas consentratuitas para o dia a dia</title>
 
     <title>Portal Utilidades | Ferramentas gratuitas para o dia a dia</title>
     <meta name="description" content="Encontre calculadoras, conversores e ferramentas gratuitas para facilitar sua rotina. Utilidades online para Dourados, região e todo o Brasil.">
@@ -26,6 +26,8 @@
 
     <link rel="stylesheet" href="/css/style.css">
     <script src="/js/main.js" defer></script>
+    <script src="/js/privacy.js" defer></script>
+
 </head>
 
 <body>
@@ -133,9 +135,54 @@
 
             <nav aria-label="Links do rodapé">
                 <a href="#sobre">Sobre</a>
+
+                <a href="/privacidade.html">Política de Privacidade</a>
+
+                <button type="button"
+                        id="abrir-privacidade"
+                        class="privacy-settings-button">
+                    Configurações de privacidade
+                </button>
             </nav>
 
         </div>
     </footer>
+
+    <section
+        id="aviso-privacidade"
+        class="privacy-banner"
+        role="region"
+        aria-label="Preferências de privacidade"
+        hidden
+    >
+        <div class="container">
+            <h2>Sua privacidade</h2>
+
+            <p>
+                Utilizamos tecnologias opcionais de análise
+                para entender como o site é utilizado e
+                melhorar nossas ferramentas. Você pode
+                aceitar ou recusar essa coleta e alterar
+                sua escolha posteriormente.
+            </p>
+
+            <div class="privacy-actions">
+                <button
+                    type="button"
+                    id="aceitar-analytics"
+                >
+                    Aceitar análise
+                </button>
+
+                <button
+                    type="button"
+                    id="recusar-analytics"
+                >
+                    Recusar análise
+                </button>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
