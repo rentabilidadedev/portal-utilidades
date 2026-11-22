@@ -18,6 +18,7 @@ function atualizarAno() {
 }
 
 // Configura a pesquisa dinâmica dos cartões.
+
 function configurarBusca() {
     const campoBusca = document.getElementById("busca-ferramentas");
     const lista = document.getElementById("lista-ferramentas");
@@ -29,13 +30,15 @@ function configurarBusca() {
 
     const cartoes = Array.from(lista.querySelectorAll(".tool-card"));
 
+    let temporizadorBusca = null;
+
     campoBusca.addEventListener("input", () => {
         const termo = normalizarTexto(campoBusca.value);
         let encontrados = 0;
 
         cartoes.forEach((cartao) => {
             const conteudo = normalizarTexto(
-                `${cartao.querySelector("h3")?.textContent || ""} 
+                `${cartao.querySelector("h3")?.textContent || ""}
                  ${cartao.querySelector("p")?.textContent || ""}`
             );
 
@@ -49,6 +52,40 @@ function configurarBusca() {
         });
 
         mensagemVazia.hidden = encontrados > 0;
+
+        // Evita registrar um evento a cada tecla digitada.
+        clearTimeout(temporizadorBusca);
+
+        // Não registra pesquisas vazias.
+        if (!termo) {
+            return;
+        }
+
+        temporizadorBusca = setTimeout(() => {
+            // A coleta só ocorre após consentimento.
+            let consentimento = null;
+
+            try {
+                consentimento = localStorage.getItem(
+                    "rentabilidade_analytics_consent"
+                );
+            } catch (erro) {
+                return;
+            }
+
+            if (
+                consentimento !== "accepted" ||
+                typeof window.gtag !== "function"
+            ) {
+                return;
+            }
+
+            window.gtag("event", "tool_search", {
+                search_results_count: encontrados,
+                search_has_results: encontrados > 0,
+                search_term_length: termo.length
+            });
+        }, 800);
     });
 }
 
