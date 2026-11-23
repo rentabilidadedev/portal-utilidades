@@ -1,7 +1,10 @@
 {
     "name":  "portal-utilidades",
     "compatibility_date":  "2026-11-19",
+    "main":  "./src/worker.js",
     "assets":  {
-                   "directory":  "./public"
+                   "directory":  "./public",
+                   "binding":  "ASSETS",
+                   "run_worker_first":  true
                }
 }
